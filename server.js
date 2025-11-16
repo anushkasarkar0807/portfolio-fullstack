@@ -45,3 +45,17 @@ app.get("/", (req, res) => res.send("Hello from backend"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+import cors from "cors";
+
+app.use(cors({
+  origin: "https://anushkasarkar0807.github.io", 
+  methods: ["POST", "GET"]
+}));
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "https://anushkasarkar0807.github.io",
+    methods: ["POST", "GET"],
+  })
+);
