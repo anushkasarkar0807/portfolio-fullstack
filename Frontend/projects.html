@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projects — Anushka Sarkar</title>
+
+    <!-- Tailwind via CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "ui-sans-serif", "system-ui"],
+              cursive: ['"Great Vibes"', "cursive"],
+              dancing: ['"Dancing Script"', "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <script
+      src="https://kit.fontawesome.com/1b9f202788.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+        transition: all 0.7s ease;
+      }
+
+      .header-scrolled {
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        backdrop-filter: saturate(180%) blur(8px);
+      }
+
+      .dark .header-scrolled {
+        background-color: rgba(17, 24, 39, 0.85);
+      }
+      body {
+        background-image: url("./assets/images/project-bg.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed; /* optional */
+      }
+      .text-shadow-white {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+          0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800 dark:text-gray-800 text-shadow-white">
+    <!-- Header  -->
+    <header
+      id="site-header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all"
+    >
+      <nav
+        class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="/assets/images/LOGOmain.png"
+            alt="Anushka Logo"
+            class="h-[5rem] w-[5rem] rounded"
+          />
+        </a>
+
+        <div class="flex items-center justify-between gap-20">
+          <button
+            id="menu-btn"
+            class="md:hidden rounded-md p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
+            aria-label="Open menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <ul
+            id="nav-links"
+            class="hidden md:flex items-center gap-6 text-md font-medium"
+          >
+            <li>
+              <a
+                class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+                href="about.html"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-indigo-600 dark:text-indigo-300 hover:text-indigo-500 dark:hover:text-indigo-200 transition"
+                href="projects.html"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+                href="contact.html"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+
+          <button
+            id="theme-toggle"
+            aria-label="Toggle theme"
+            class="rounded-md p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
+          >
+            <i
+              class="fa-solid fa-sun hidden dark:block text-2xl"
+              id="icon-sun"
+            ></i>
+            <i class="fa-solid fa-moon dark:hidden text-2xl" id="icon-moon"></i>
+          </button>
+        </div>
+      </nav>
+      <ul id="mobile-nav" class="md:hidden hidden px-6 pb-4 space-y-2 text-sm">
+        <li>
+          <a
+            class="block rounded-md px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10"
+            href="index.html"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="block rounded-md px-3 py-2 dark:bg-white/5 dark:hover:bg-white/10"
+            href="about.html"
+            >About Me</a
+          >
+        </li>
+        <li>
+          <a
+            class="block rounded-md px-3 py-2 dark:bg-white/5 dark:bg-white/10"
+            href="projects.html"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            class="block rounded-md px-3 py-2 dark:bg-white/5 dark:hover:bg-white/10"
+            href="contact.html"
+            >Contact Me</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <main class="pt-24">
+      <section class="reveal">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+          <h1
+            class="mt-2 text-4xl sm:text-5xl font-semibold leading-tight font-cookie text-gray-700 dark:text-white-700 text-shadow-white"
+          >
+            Crafted with Code & Curiosity
+          </h1>
+          <p class="text-gray-900 dark:text-gray-900 mt-5 text-shadow-white">
+            Every project here is more than just lines of code — it's a
+            reflection of curiosity, persistence, and the joy of building. From
+            small experiments to structured applications, each one taught me
+            something new and pushed me a step forward in my journey as a
+            developer.
+          </p>
+<div class="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- Smart IoT Dustbin card (unchanged) -->
+  <div
+    class="rounded-xl overflow-hidden border border-black/5 dark:border-white/10 bg-white dark:bg-white/5 hover:-translate-y-1 hover:shadow-xl transition"
+  >
+    <div class="aspect-[4/3] overflow-hidden">
+      <img
+        src="assets/images/wastemanagement.webp"
+        alt="Smart IoT Dustbin preview"
+        class="h-full w-full object-cover group-hover:scale-105 transition duration-300"
+      />
+    </div>
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">Smart IoT Dustbin</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-900 mt-1">
+        Auto lid, ultrasonic level, MQ135 odor sensing, and BLYNK IoT monitoring.
+      </p>
+      <div class="mt-4">
+        <a
+          href="project-wastemanagement.html"
+          class="inline-flex items-center justify-center rounded-md bg-indigo-600 text-white px-5 py-2.5 hover:bg-indigo-700 transition w-full"
+        >
+          View Details
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIXED ISAC PROJECT CARD (same size as first one) -->
+  <div
+    class="rounded-xl overflow-hidden border border-black/5 dark:border-white/10 bg-white dark:bg-white/5 hover:-translate-y-1 hover:shadow-xl transition"
+  >
+    <div class="aspect-[4/3] overflow-hidden">
+      <img
+        src="assets/images/Network-level-ISAC.png"   
+        alt="ISAC preview"
+        class="h-full w-full object-cover group-hover:scale-105 transition duration-300"
+      />
+    </div>
+
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">Integrated-sensing & communication</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-900 mt-1">
+        ISAC, MACHINE LEARNING.
+      </p>
+      <div class="mt-4">
+        <a
+          href="project-ISAC.html"
+          class="inline-flex items-center justify-center rounded-md bg-indigo-600 text-white px-5 py-2.5 hover:bg-indigo-700 transition w-full"
+        >
+          View Details
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Project -->
+  <div
+    class="rounded-xl overflow-hidden border border-black/5 dark:border-white/10 bg-white dark:bg-white/5 hover:-translate-y-1 hover:shadow-xl transition"
+  >
+    <div
+      class="aspect-[4/3] flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
+    >
+      Coming Soon
+    </div>
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">Upcoming Project</h3>
+      <p class="text-sm text-gray-900 dark:text-gray-900 mt-1">
+        More projects will be added as they are completed.
+      </p>
+      <div class="mt-4">
+        <button
+          class="inline-flex items-center justify-center bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium cursor-not-allowed w-full"
+        >
+          Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </section>
+    </main>
+
+    <!-- Footer  -->
+    <footer
+      class="bg-gradient-to-r from-pink-100 via-indigo-100 to-sky-100 dark:from-pink-900 dark:via-indigo-900 dark:to-sky-900"
+    >
+      <!-- <div class="max-w-6xl mx-auto p-6 text-center">
+      <a href="index.html">
+        <img src="/assets/images/Logo.png" alt="Anushka Logo" class="h-[10rem] w-[10rem] rounded mx-auto" />
+      </a>
+      <div class="mt-2 flex justify-center gap-4 text-sm">
+        <a class="hover:underline" href="mailto:anushkasarkar0807@gmail.com" target="_blank">Email</a>
+        <a class="hover:underline" href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+        <a class="hover:underline" href="contact.html" rel="noreferrer">Contact</a>
+      </div>
+      <p class="text-xs mt-1">© <span id="year"></span> Anushka Sarkar. All rights reserved.</p>
+    </div> -->
+
+      <div
+        class="max-w-6xl h-[12rem] mx-auto flex items-center justify-between p-6"
+      >
+        <a href="index.html">
+          <img
+            src="/assets/images/LOGOmain.png"
+            alt="Anushka Logo"
+            class="h-[10rem] w-[10rem] rounded"
+          />
+        </a>
+        <div class="flex flex-col items-center justify-end h-full">
+          <p class="text-xs mt-1 align-baseline">
+            © <span id="year"></span> Anushka Sarkar. All rights reserved.
+          </p>
+        </div>
+        <div class="mt-2 flex justify-center gap-4 text-md">
+          <a
+            class="hover:underline"
+            href="mailto:anushkasarkar0807@gmail.com"
+            target="_blank"
+            >Email</a
+          >
+          <a
+            class="hover:underline"
+            href="https://www.linkedin.com/in/anushka-0807-sarkar/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a class="hover:underline" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

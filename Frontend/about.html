@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>About — Anushka Sarkar</title>
+
+  <!-- Tailwind via CDN  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            lora: ['Lora', 'serif'],
+            cookie: ['Cookie', 'cursive'],
+            dancing: ['"Dancing Script"', 'cursive']
+           
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://kit.fontawesome.com/1b9f202788.js" crossorigin="anonymous"></script>
+
+  <!-- Playfair Display -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+
+
+<!-- Dancing Script, Great Vibes, and Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet" />
+
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px)
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: none;
+      transition: all .7s ease
+    }
+
+    .header-scrolled {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  backdrop-filter: saturate(150%) blur(12px);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dark .header-scrolled {
+  background: rgba(20, 25, 40, 0.75);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(50, 50, 70, 0.5);
+}
+  .bg-light-image {
+   background-image: url('./assets/images/light-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.bg-light-image2 {
+   background-image: url('./assets/images/bg-light2.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.dark .dark\:bg-dark-image {
+  background-image: url('./assets/background-dark.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.text-shadow-white {
+  color: white; /* white text */
+  text-shadow:
+    0 0 25px rgba(255, 255, 255, 0.8),
+    0 0 25px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 dark:text-gray-800 bg-lavender-600 dark:bg-lavender-900 text-shadow-white">
+  <!-- Your page content here -->
+</body>
+
+  <!-- Header  -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all">
+    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/LOGOmain.png" alt="Anushka Logo" class="h-[5rem] w-[5rem] rounded" />
+      </a>
+
+      <div class="flex items-center justify-between gap-20">
+        <button id="menu-btn" class="md:hidden rounded-md p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
+          aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <ul id="nav-links" class="hidden md:flex items-center gap-6 text-md font-medium">
+          <li>
+            <a class=" font-semibold hover:text-indigo-600 dark:text-indigo-600 transition font-lora" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class=" font-lora font-semibold hover:text-indigo-600 dark:text-indigo-600 dark:hover:text-indigo-200 transition"
+              href="about.html">About Me</a>
+          </li>
+          <li>
+            <a class="font-lora font-semibold hover:text-indigo-600 dark:text-indigo-600 dark:hover:text-indigo-200 transition" href="projects.html">Projects</a>
+          </li>
+          <li>
+            <a class="font-lora font-semibold hover:text-indigo-600 dark:text-indigo-600 dark:hover:text-indigo-200 transition" href="contact.html">Contact Me</a>
+          </li>
+        </ul>
+
+        <button id="theme-toggle" aria="Toggle theme"
+          class="rounded-md p-2 hover:bg-black/5 dark:hover:bg-white/10 transition">
+          <i class="fa-solid fa-sun hidden dark:block text-2xl" id="icon-sun"></i>
+          <i class="fa-solid fa-moon dark:hidden text-2xl" id="icon-moon"></i>
+        </button>
+      </div>
+    </nav>
+    <ul id="mobile-nav" class="md:hidden hidden px-6 pb-4 space-y-2 text-sm">
+      <li>
+        <a class="block rounded-md px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" href="index.html">Home</a>
+      </li>
+      <li>
+        <a class="block rounded-md px-3 py-2 bg-black/5 dark:bg-white/10" href="about.html">About Me</a>
+      </li>
+      <li>
+        <a class="block rounded-md px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" href="projects.html">Projects</a>
+      </li>
+      <li>
+        <a class="block rounded-md px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" href="contact.html">Contact
+          Me</a>
+      </li>
+    </ul>
+  </header>
+
+  <main class="pt-24">
+    <!-- Intro  -->
+
+    <section class="reveal bg-light-image dark:bg-lavender-600">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <img src="assets/images/aboutimage.jpeg" alt="Profile"
+          class="w-full max-w-md rounded-2xl ring-4 ring-pink-200 dark:ring-pink-700 shadow-xl mx-auto" />
+        <div>
+   <h1 class="text-4xl sm:text-5xl font-bold font-playfair text-pink-700 dark:text-pink-700">
+           Whispers Between the Lines
+          </h1>
+
+
+          <p class="mt-5 text-white-900 dark:text-gray-900 font-lora font-medium font-bold text-justify">
+            I am Anushka Sarkar, an M.Tech student specializing in Computer Science at NIT Meghalaya, currently holding a CGPA of 8.70 in my first year. My academic journey began with a B.Tech degree from Budge Budge Institute of Technology (MAKAUT), where I graduated with a CGPA of 9.15. My foundational education includes successful completion of Madhyamik under WBBSE and Higher Secondary under CBSE. I possess strong skills in Data Structures, Algorithms, and several programming languages including C, C++, Python, HTML, CSS, Tailwind CSS, and Vanilla JavaScript. Notably, during my undergraduate studies, I developed a Smart IoT Dustbin prototype equipped with motion sensors, ultrasonic detection, and IoT monitoring via the BLYNK app, which was later published in Springer. Currently, I am engaged in research at the intersection of AI/ML and next-generation 5G and 6G communications, while further enhancing my expertise in web development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline  -->
+    <section class="reveal bg-lavender-600 dark:bg-sky-950">
+      <div class="max-w-3xl mx-auto px-6 py-16">
+        <h2 class="text-5xl sm:text-6xl font-medium font-cookie text-indigo-700 dark:text-indigo-300 text-center">
+          Academic Timeline
+        </h2>
+        <div class="relative mt-12">
+          <!-- Vertical line -->
+          <div class="absolute left-6 top-0 h-full border-l-4 border-indigo-400"></div>
+
+          <!-- Item -->
+          <div class="mb-12 flex items-center">
+            <div
+              class="relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-indigo-500 text-white text-2xl">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div
+              class="ml-8 flex-1 rounded-xl p-6 bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-indigo-900 dark:to-pink-900 shadow-md">
+              <h3 class="font-semibold">M.Tech — CSE</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">NIT Meghalaya, CGPA 8.55 after 1st Year.</p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="mb-12 flex items-center">
+            <div
+              class="relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-pink-500 text-white text-2xl">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div
+              class="ml-8 flex-1 rounded-xl p-6 bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-indigo-900 dark:to-pink-900 shadow-md">
+              <h3 class="font-semibold">B.Tech — CSE</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Budge Budge Institute of Technology, MAKAUT, CGPA
+                9.15, 2023.</p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="mb-12 flex items-center">
+            <div
+              class="relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white text-2xl">
+              <i class="fas fa-school"></i>
+            </div>
+            <div
+              class="ml-8 flex-1 rounded-xl p-6 bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-indigo-900 dark:to-pink-900 shadow-md">
+              <h3 class="font-semibold">Higher Secondary</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Ashok Hall Girls Higher Secondary School, CBSE, 75%,
+                2019.</p>
+            </div>
+          </div>
+
+          <!-- Item -->
+          <div class="mb-12 flex items-center">
+            <div
+              class="relative z-10 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-white text-2xl">
+              <i class="fas fa-book"></i>
+            </div>
+            <div
+              class="ml-8 flex-1 rounded-xl p-6 bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-indigo-900 dark:to-pink-900 shadow-md">
+              <h3 class="font-semibold">Matriculation</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Bidya Bharati Girls High School, WBBSE, 83.14%, 2017.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Skills & Interests  -->
+       <section class="reveal bg-light-image2 dark:bg-lavender-600">
+  
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-5xl sm:text-6xl font-medium font-dancing text-indigo-700 dark:text-indigo-700 text-center">
+          Academic Timeline
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <!-- Technical Skills -->
+          <div
+            class="rounded-xl p-6 bg-white/70 dark:bg-white/10 border border-white/60 dark:border-white/2 backdrop-blur">
+            <h3 class="text-md font-lora font-bold ">Technical Skills</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200">C</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200">C++</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200">Python
+                (basic)</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200">HTML</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200">CSS</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200">Tailwind
+                CSS</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200">Vanilla
+                JS</span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200">DSA</span>
+            </div>
+          </div>
+
+          <!-- Research Interests -->
+          <div
+            class="rounded-xl p-6 bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 backdrop-blur">
+            <h3 class="text-md font-bold font-lora">Research Interests</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200">
+                Artificial Intelligence
+              </span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200">
+                ML Algorithms
+              </span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200">
+                Model Training
+              </span>
+              <span
+                class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200">
+                Integrated Sensing and Communications
+              </span>
+             <!-- <span
+                class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200">-->
+               
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer  -->
+  <footer
+></footer>
+    <!-- <div class="max-w-6xl mx-auto p-6 text-center">
+      <a href="index.html">
+        <img src="/assets/images/Logo.png" alt="Anushka Logo" class="h-[10rem] w-[10rem] rounded mx-auto" />
+      </a>
+      <div class="mt-2 flex justify-center gap-4 text-sm">
+        <a class="hover:underline" href="mailto:anushkasarkar0807@gmail.com" target="_blank">Email</a>
+        <a class="hover:underline" href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+        <a class="hover:underline" href="contact.html" rel="noreferrer">Contact</a>
+      </div>
+      <p class="text-xs mt-1">© <span id="year"></span> Anushka Sarkar. All rights reserved.</p>
+    </div> -->
+
+    <div class="max-w-6xl h-[12rem] mx-auto flex items-center justify-between p-6">
+      <a href="index.html">
+        <img src="assets/images/LOGOmain.png" alt="Anushka Logo" class="h-[10rem] w-[10rem] rounded" />
+      </a>
+      <div class="flex flex-col items-center justify-end h-full">
+        <p class="text-xs mt-1 align-baseline">© <span id="year"></span> Anushka Sarkar. All rights reserved.</p>
+      </div>
+      <div class="mt-2 flex justify-center gap-4 text-md">
+        <a class="hover:underline" href="mailto:anushkasarkar0807@gmail.com" target="_blank">Email</a>
+        <a class="hover:underline" href="https://www.linkedin.com/in/anushka-0807-sarkar/" target="_blank"
+          rel="noreferrer">LinkedIn</a>
+        <a class="hover:underline" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

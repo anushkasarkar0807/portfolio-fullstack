@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISAC Section</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            lora: ['Lora', 'serif'],
+            cookie: ['Cookie', 'cursive'],
+            dancing: ['"Dancing Script"', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts (optional but keeps your font classes functional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for sun/moon icons -->
+  <script src="https://kit.fontawesome.com/1b9f202788.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-sky-50 dark:bg-sky-950 text-gray-900 dark:text-gray-100">
+
+  <section class="reveal bg-sky-50 dark:bg-sky-950">
+    <div class="max-w-6xl mx-auto px-6 pt-12 pb-6">
+      <h1 class="text-4xl sm:text-5xl font-bold font-dancing text-indigo-700 dark:text-indigo-300">
+    Integrated Sensing & Communication (ISAC) (localization)
+  </h1>
+
+        <p>
+
+        ISAC combines wireless data communication and environmental sensing in a unified framework,
+        leveraging advanced AI/ML to enable spectrum sharing and multi-functionality for next-generation 5G/6G networks.
+      </p>
+    </div>
+
+    <!-- FIXED NAV: note the closing ">" on <nav> -->
+   <!-- Toggle button positioned at top-right -->
+  <button id="theme-toggle" aria-label="Toggle theme"
+    class="absolute -top-0 right-4 z-20 rounded-md p-2 
+           bg-white/70 dark:bg-gray-900/70 
+           border border-white/60 dark:border-white/10 
+           hover:bg-black/5 dark:hover:bg-white/10 
+           backdrop-blur transition">
+    <i class="fa-solid fa-sun hidden dark:block text-2xl"></i>
+    <i class="fa-solid fa-moon dark:hidden text-2xl"></i>
+  </button>
+
+
+
+    <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+      <div class="space-y-8 md:col-span-1">
+
+        <div class="rounded-xl p-6 bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 backdrop-blur">
+          <h3 class="font-semibold text-xl">Overview</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Domain:</strong> Wireless Communication, Signal Processing</li>
+            <li><strong>Core Concepts:</strong> Spectrum Sharing, Joint Sensing & Communication</li>
+            <li><strong>Technologies:</strong> AI/ML, 5G/6G, MIMO, Radar</li>
+          </ul>
+          <a
+            href="https://www.huawei.com/en/huaweitech/future-technologies/integrated-sensing-communication-concept-practice"
+            target="_blank"
+            class="mt-4 inline-flex items-center justify-center rounded-md bg-indigo-600 text-white px-5 py-2.5 hover:bg-indigo-700 transition w-full">
+            Learn More
+          </a>
+        </div>
+
+        <!-- Keeping your standalone text "Features" as-is -->
+        Features
+
+        <div class="rounded-xl p-6 bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 backdrop-blur">
+          <h3 class="font-semibold text-xl">Features</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Joint waveform design for data & sensing.</li>
+            <li>Real-time spatial mapping & localization.</li>
+            <li>AI-based activity and object detection.</li>
+            <li>Optimized resource sharing for 6G platforms.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl p-6 bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 backdrop-blur">
+          <h3 class="font-semibold text-xl">Research Outcomes</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Enhanced spectrum efficiency for communication networks.</li>
+            <li>Improved low-latency, high-accuracy object/person localization.</li>
+            <li>Demonstrated interference mitigation in ISAC simulations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-xl p-6 bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 backdrop-blur">
+        <h3 class="font-semibold text-xl">Applications and Use Cases</h3>
+        <div>
+          <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            <div class="overflow-hidden break-inside-avoid rounded-xl bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 shadow-md">
+              <img src="assets/images/smartcity.png"
+                   alt="Smart City Sensing"
+                   class="w-64 h-64 object-cover rounded-t-xl mx-auto" />
+              <p class="text-center py-2 text-xs font-semibold text-gray-700 dark:text-gray-300">Smart City Sensing</p>
+            </div>
+
+            <div class="overflow-hidden break-inside-avoid rounded-xl bg-white/70 dark:bg-white/5 border border-white/60 dark:border-white/10 shadow-md">
+              <img src="assets/images/autonomous vehicle-image.png"
+                   alt="Autonomous Driving"
+                   class="w-64 h-64 object-cover rounded-t-xl mx-auto" />
+              <p class="text-center py-2 text-xs font-semibold text-gray-700 dark:text-gray-300">Autonomous Driving</p>
+            </div>
+
+            <div class="overflow-hidden break-inside-avoid rounded-xl bg-white/70 dark:bg-white/5 border shadow">
+              <img src="assets/images/droneimage genertaed.png"
+                   alt="Drones/Uavs"
+                   class="w-64 h-64 object-cover rounded-t-xl mx-auto" />
+              <p class="text-center py-2 text-justify font-semibold text-gray-700 dark:text-gray-300">Drone/Uavs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-10 text-center">
+      <a
+        href="projects.html"
+        class="inline-flex items-center justify-center gap-3 rounded-md bg-indigo-600 text-white px-20 py-3 hover:bg-indigo-700 transition">
+        <i class="fa-solid fa-arrow-left"></i> Back to Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- Theme toggle script -->
+  <script>
+    const btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.onclick = () => {
+        document.documentElement.classList.toggle("dark");
+      };
+    }
+  </script>
+</body>
+
+    <!-- Footer  -->
+    <footer
+      class="bg-gradient-to-r from-pink-100 via-indigo-100 to-sky-100 dark:from-pink-900 dark:via-indigo-900 dark:to-sky-900"
+    >
+      <!-- <div class="max-w-6xl mx-auto p-6 text-center">
+      <a href="index.html">
+        <img src="/assets/images/Logo.png" alt="Anushka Logo" class="h-[10rem] w-[10rem] rounded mx-auto" />
+      </a>
+      <div class="mt-2 flex justify-center gap-4 text-sm">
+        <a class="hover:underline" href="mailto:anushkasarkar0807@gmail.com" target="_blank">Email</a>
+        <a class="hover:underline" href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+        <a class="hover:underline" href="contact.html" rel="noreferrer">Contact</a>
+      </div>
+      <p class="text-xs mt-1">© <span id="year"></span> Anushka Sarkar. All rights reserved.</p>
+    </div> -->
+
+      <div
+        class="max-w-6xl h-[12rem] mx-auto flex items-center justify-between p-6"
+      >
+        <a href="index.html">
+          <img
+            src="/assets/images/LOGOmain.png"
+            alt="Anushka Logo"
+            class="h-[10rem] w-[10rem] rounded"
+          />
+        </a>
+        <div class="flex flex-col items-center justify-end h-full">
+          <p class="text-xs mt-1 align-baseline">
+            © <span id="year"></span> Anushka Sarkar. All rights reserved.
+          </p>
+        </div>
+        <div class="mt-2 flex justify-center gap-4 text-md">
+          <a
+            class="hover:underline"
+            href="mailto:anushkasarkar0807@gmail.com"
+            target="_blank"
+            >Email</a
+          >
+          <a
+            class="hover:underline"
+            href="https://www.linkedin.com/in/anushka-0807-sarkar/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a class="hover:underline" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
