@@ -1,44 +1,47 @@
+// Backend/server.js
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import cors from "cors";
-import dotenv from "dotenv";
-
-// Load .env before anything else
-dotenv.config();
-
-console.log("Loaded URI =", process.env.MONGODB_URI);
+import bodyParser from "body-parser";
 
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors()); // allow cross-origin requests
+app.use(bodyParser.json()); // parse application/json
 
-// Connect to MongoDB Atlas
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI; // render env var
+if (!MONGO_URI) {
+  console.error("Missing MONGO_URI env var");
+}
+
 mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("MongoDB connected successfully!"))
-  .catch((err) => console.log("Connection error:", err));
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-// Schema & Model
 const contactSchema = new mongoose.Schema({
   name: String,
   email: String,
   message: String,
+  createdAt: { type: Date, default: Date.now },
 });
 const Contact = mongoose.model("Contact", contactSchema);
 
-// Route
-app.post("/api/contact", async (req, res) => {
+app.post("/contact", async (req, res) => {
   try {
-    const contact = new Contact(req.body);
-    await contact.save();
-    res.status(201).json({ message: "Message saved!" });
+    const { name, email, message } = req.body;
+    const doc = new Contact({ name, email, message });
+    await doc.save();
+    res.json({ ok: true, id: doc._id });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+    res.status(500).json({ ok: false, error: "Server error" });
   }
 });
 
-// Start server
-app.listen(process.env.PORT || 5000, () =>
-  console.log(`Server running on http://localhost:${process.env.PORT || 5000}`)
-);
+app.get("/", (req, res) => res.send("Hello from backend"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
